@@ -1,0 +1,75 @@
+:root{--bg:#f5f6fa;--surface:#fff;--ink:#1b1e27;--muted:#5a6070;--line:#dfe2ec;--blue:#2e3192;--gold:#d4a72c;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12141b;--surface:#1b1e28;--ink:#f1f2f7;--muted:#a4aabb;--line:#2b3040;--blue:#8c93ff}}
+:root[data-theme="dark"]{--bg:#12141b;--surface:#1b1e28;--ink:#f1f2f7;--muted:#a4aabb;--line:#2b3040;--blue:#8c93ff}
+*,*::before,*::after{box-sizing:border-box}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo img{filter:drop-shadow(0 0 1px #fff) drop-shadow(0 0 6px rgba(255,255,255,.8))}}
+:root[data-theme="dark"] .logo img{filter:drop-shadow(0 0 1px #fff) drop-shadow(0 0 6px rgba(255,255,255,.8))}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(245,246,250,.7);background:color-mix(in srgb,var(--bg) 60%,transparent);-webkit-backdrop-filter:blur(14px) saturate(1.5);backdrop-filter:blur(14px) saturate(1.5);border-bottom:1px solid color-mix(in srgb,var(--ink) 10%,transparent)}
+header .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.logo{display:block;padding:2px 0}
+.logo img{height:42px;filter:drop-shadow(0 2px 6px rgba(27,30,39,.3))}
+nav{margin-left:auto;display:flex;gap:22px}
+nav a{text-decoration:none;color:var(--muted);font-weight:600}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:12px 22px;font:600 1rem Figtree,sans-serif;text-decoration:none;cursor:pointer;background:#1fa34a;color:#fff;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.btn svg{width:20px;height:20px;fill:currentColor}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;padding:56px 0}
+.hero h1{font-size:clamp(2.2rem,5vw,3.7rem);font-weight:800}
+.hero p{color:var(--muted);font-size:1.15rem;max-width:34ch;margin:18px 0 26px}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.tile{aspect-ratio:1.25;border:0;cursor:pointer;background:var(--c);color:var(--on);border-radius:6px 72% 6px 72%;padding:18px 20px;text-align:left;font:800 1.2rem "Bricolage Grotesque",sans-serif;display:flex;flex-direction:column;justify-content:flex-end;transition:transform .2s,border-radius .3s}
+.tile small{font:600 .85rem Figtree,sans-serif;opacity:.85}
+.tile:hover{transform:rotate(-2deg) scale(1.03);border-radius:6px 40% 6px 40%}
+section{padding:48px 0}
+h2{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:800}
+.sub{color:var(--muted);margin:8px 0 22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.chip{border:2px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 16px;font:600 .95rem Figtree,sans-serif;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--c,var(--ink));border-color:var(--c,var(--ink));color:var(--on,var(--bg))}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card .img{aspect-ratio:4/3;background:#fff}
+.card img{width:100%;height:100%;object-fit:cover}
+.ph{width:100%;height:100%;display:grid;place-items:center;text-align:center;padding:16px;background:repeating-linear-gradient(45deg,var(--surface),var(--surface) 12px,var(--line) 12px,var(--line) 13px);color:var(--muted);font-size:.9rem}
+.card .body{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.tag{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.9rem}
+.tag i{width:10px;height:10px;border-radius:50%;background:var(--c)}
+.card h3{font-size:1.15rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem;flex:1}
+.card .btn{justify-content:center;padding:10px 16px;font-size:.95rem}
+.band{border-radius:22px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+.band.gold{background:linear-gradient(135deg,#1b1e27,#2a2f3d);color:#f1f2f7}
+.band.gold h2 span{color:var(--gold)}
+.band.gold p{color:#c3c8d6}
+.band img{border-radius:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.box{border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:26px}
+.box h3{margin-bottom:8px;font-size:1.3rem}
+.box p{margin:0 0 16px;color:var(--muted)}
+.idea{background:#f28c28;color:#1b1e27;text-align:center;border-radius:22px;padding:48px 20px;overflow:hidden}
+.idea .btn{background:#1b1e27;color:#fff}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.marq{overflow:hidden}
+.track{display:flex;width:max-content;animation:mq 34s linear infinite;font:800 clamp(1.8rem,4.5vw,3rem)/1.2 "Bricolage Grotesque",sans-serif}
+.idea:hover .track{animation-play-state:paused}
+.track span{white-space:nowrap;padding-right:56px}
+.track span::after{content:"";display:inline-block;width:14px;height:14px;border-radius:50%;background:currentColor;opacity:.35;margin-left:56px}
+@keyframes mq{to{transform:translateX(-50%)}}
+.idea p{margin:14px 0 22px;font-weight:600}
+.social{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted)}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:6;width:56px;height:56px;border-radius:50%;background:#1fa34a;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+.fab svg{width:28px;height:28px;fill:#fff}
+@media (max-width:760px){nav{display:none}header .btn{margin-left:auto}.hero,.band,.two{grid-template-columns:1fr}.band{padding:24px}.hero{padding:32px 0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.marq{display:none}.sr{position:static;width:auto;height:auto;clip:auto;overflow:visible;white-space:normal}}
