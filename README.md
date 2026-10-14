@@ -1,19 +1,35 @@
-# Wirox web (React + Vite, JavaScript)
+# Wirox Web
 
-## Correrlo en tu compu
-1. Instalá Node.js (versión LTS) desde nodejs.org
-2. En esta carpeta: `npm install`
-3. `npm run dev` y abrí la dirección que aparece (http://localhost:5173)
+Sitio web para Wirox, negocio de láminas acrílicas e insumos en Lima, Perú. Muestra el catálogo por categorías y permite cotizar cada producto por WhatsApp.
 
-## Publicar
-`npm run build` genera la carpeta `dist`, que se sube a GitHub Pages, Netlify o Vercel.
+## Tecnologías
 
-## Antes de publicar (SEO)
-- Reemplazá `TU-DOMINIO.com` en `index.html`, `public/robots.txt` y `public/sitemap.xml`.
-- Reemplazá los espacios "Foto del producto" con imágenes limpias en `public/images` y actualizá `src/data/products.js`.
-- Dá de alta el sitio en Google Search Console y creá el perfil de Google Business.
+React, Vite, JavaScript y CSS.
 
-## Dónde tocar
-- Productos y categorías: `src/data/products.js`
-- Colores y estilos: `src/styles.css`
-- Secciones: `src/components`
+## Funciones
+
+- Catálogo con filtro por categorías
+- Botón "Cotizar" con mensaje de WhatsApp armado según el producto
+- Diseño responsive con modo claro y oscuro
+- SEO básico: etiquetas meta, Open Graph, datos estructurados de negocio local, robots.txt y sitemap
+
+## Estructura
+
+- `src/components`: secciones de la página
+- `src/data/products.js`: productos y categorías
+- `src/styles.css`: estilos
+
+## Cómo correrlo
+
+```
+npm install
+npm run dev la dirección   (http://localhost:5173)
+```
+
+Para generar la versión de producción: `npm run build`
+
+## Próximos pasos
+
+- Reemplazar fotos de producto por imágenes faltantes y limpias del negocio
+- Dominio propio y ajuste del SEO
+- Actualizar dependencias por verificar aún.
